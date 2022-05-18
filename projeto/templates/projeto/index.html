@@ -3,10 +3,26 @@
     <head>
         <meta charset="UTF-8">
         <title>Projeto_loja</title>
-		</style>
+        <link rel="stylesheet" href="style/style.css"> 
     </head>
     <body>
-        <header>
-        </header>
+        <div id="mySidenav" class="sidenav">
+            <ul>
+                <li><a href="#">Gerenciar Produtos</a></li>
+                    <div id="produtos" class="sideprodutos">
+                        <ul>
+                            <li><a href="{% url 'lista_de_produtos' %}">Lista de Produtos</a></li>
+                            <li><a href="#">Cadastrar Produto</a></li>
+                        </ul>
+                    </div>
+                
+                <li><a href="#">Catálogo</a></li>
+                    <div id="vendas" class="sidevendas">
+                        <ul>
+                            <li><a href="{% url 'disponiveis' %}">Lista de Produtos disponíveis</a></li>
+                        </ul>
+            </ul>
+                </div>
+          </div>
     </body>
 </html>
