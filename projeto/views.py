@@ -1,6 +1,8 @@
+import pdb
 from django.shortcuts import get_object_or_404, redirect, render
-from projeto.forms import NewProduct, Sell, UpdateProduct
+from projeto.forms import NewProduct, NewSell, UpdateProduct
 from projeto.models import Product
+from projeto.models import Sell
 
 '''produtos=Product.objects.all()
 import pdb; pdb.set_trace()'''
@@ -37,16 +39,11 @@ def editar_produto(request,id):
 
 def comprar_produto(request,id):
     produto=get_object_or_404(Product,pk=id)
-    #import pdb; pdb.set_trace()
-    form=Sell(request.POST or None)
+    form=NewSell(request.POST or None, initial={'id_product':produto.pk})
+
     if request.POST:
         if form.is_valid():
-            form.save()
-        return redirect(listagem_de_produtos)
-    return render(request, 'projeto/compra.html',{'form':Sell})
-'''
-def compra_finalizada(request, id):
-    produto=get_object_or_404(Product,pk=id)
-    total=produto.price*Sell.quantity
-    return render(request, 'projeto/compra_finalisada.html', {'total':total}) 
-'''
+            sell=form.save()
+            total=sell.quantity*produto.price
+            return render(request, 'projeto/compra_finalizada.html',{'total':total})
+    return render(request, 'projeto/compra.html',{'form':form,'produto':produto})

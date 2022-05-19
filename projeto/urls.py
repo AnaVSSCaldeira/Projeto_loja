@@ -8,5 +8,4 @@ urlpatterns = [
     path('cadastrar',views.cadastrar_produto, name='cadastrar'),
     path('editar/<int:id>',views.editar_produto, name='editar'),
     path('comprar/<int:id>',views.comprar_produto, name='comprar'),
-    #path('finalizada/<int:id>',views.compra_finalizada, name='finalizada'),
 ]
