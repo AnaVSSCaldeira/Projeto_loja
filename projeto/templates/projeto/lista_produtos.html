@@ -2,12 +2,15 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Projeto_loja</title>
-        <link rel="stylesheet" href="style/style.css"> 
+        <title>Listagem_de_produtos</title>
+        
     </head>
     <body>
         {% for produto in produtos %}
             {{produto.name}}
+            <a href="{% url 'editar' produto.id %}">Editar Produto</a>
+            <br>
         {% endfor %}
+        <a href="{% url 'cadastrar' %}">Cadastrar Produto</a>
     </body>
 </html>

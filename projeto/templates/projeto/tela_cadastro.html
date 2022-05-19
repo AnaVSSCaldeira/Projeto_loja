@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro_de_produto</title>
+    </head>
+    <body>
+        <h1>Cadastro</h1>
+        <form method="POST", action="{% url 'cadastrar' %}", enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button>Submit</button>
+        </form>
+    </body>
+</html>

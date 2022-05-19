@@ -21,6 +21,6 @@ class Sell(models.Model):
     name = models.CharField(max_length=20)
     email = models.EmailField(max_length=254)
     address = models.CharField(max_length=30)
-    date =  models.DateField(blank=True, null=True, default=datetime.now())
+    date =  models.DateField(default=datetime.now())
     id_product = models.ForeignKey(Product,on_delete=models.CASCADE, verbose_name = 'Produto')
     quantity = models.IntegerField()

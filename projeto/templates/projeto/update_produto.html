@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Atualização_de_produto</title>
+    </head>
+    <body>
+        <h1>Edição</h1>
+        <form method="POST", action="{% url 'editar' produto.pk %}">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button>Update</button>
+        </form>
+    </body>
+</html>

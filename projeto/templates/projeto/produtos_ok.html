@@ -2,14 +2,16 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Projeto_loja</title>
-        <link rel="stylesheet" href="style/style.css"> 
+        <title>Produtos_disponiveis</title>
+        
     </head>
     <body>
         {% for produto in produtos %}
             {{produto.name}}
             {{produto.image}}
             {{produto.price}}
+            <a href="{% url 'comprar' produto.pk %}">Comprar</a>
+            <br>
         {% endfor %}
     </body>
 </html>

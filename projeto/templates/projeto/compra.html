@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Comprando</title>
+        
+    </head>
+    <body>
+        <h1>Compra</h1>
+        <form method="POST", action="{% url 'comprar' produto.pk %}", enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <!--<button><a href="{% url 'finalizada' produto.pk %}">Purchase</a></button>-->
+            <button><a href="#">Purchase</a></button>
+        </form>
+    </body>
+</html>
