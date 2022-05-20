@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Produtos_disponiveis</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    </head>
-    <body>
+{% extends 'projeto/extends/base.html' %}
+
+{% block content %}
         <h1>Lista de produtos disponíveis</h1>
         {% for produto in produtos %}
             {{produto.name}}
@@ -15,5 +9,4 @@
             <a href="{% url 'comprar' produto.pk %}">Comprar</a>
             <br>
         {% endfor %}
-    </body>
-</html>
+{% endblock %}

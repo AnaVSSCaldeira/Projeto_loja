@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Projeto_loja</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <!-- Image and text -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'index' %}">
+      Loja Django
+    </a>
+    
+    <a href="{% url 'lista_de_produtos' %}">Lista de Produtos</a>
+    
+    <a href="{% url 'disponiveis' %}">Lista de Produtos disponíveis</a>
+</nav>
+{% block content %}
+{% endblock %}
+
+    </body>
+</html>

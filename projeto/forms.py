@@ -1,11 +1,9 @@
-from email.policy import default
 from django import forms
 from django.forms import HiddenInput, ModelForm
-from pkg_resources import require
 from .models import Product
 from .models import Sell
 
-class NewProduct(ModelForm):
+class FormProduct(ModelForm):#FormProduct
     name = forms.CharField(max_length=20)
     image = forms.ImageField(required=False)
     price = forms.DecimalField(decimal_places=2, max_digits=10, initial=0)
@@ -16,12 +14,8 @@ class NewProduct(ModelForm):
         model = Product
         fields = ['name','image','price','stock','situacao']
 
-class UpdateProduct(ModelForm):
-    class Meta:
-        model = Product
-        fields = ['name','image','price','stock','situacao']
 
-class NewSell(forms.ModelForm):
+class FormSell(forms.ModelForm):
     cpf = forms.CharField(max_length=14)
     name = forms.CharField(max_length=20)
     email = forms.EmailField(max_length=254)

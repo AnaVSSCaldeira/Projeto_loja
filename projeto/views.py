@@ -1,11 +1,6 @@
-import pdb
 from django.shortcuts import get_object_or_404, redirect, render
-from projeto.forms import NewProduct, NewSell, UpdateProduct
+from projeto.forms import FormProduct, FormSell
 from projeto.models import Product
-from projeto.models import Sell
-
-'''produtos=Product.objects.all()
-import pdb; pdb.set_trace()'''
 
 def index(request):
     return render(request, 'projeto/index.html', {})
@@ -21,16 +16,15 @@ def produtos_disponiveis(request):
 
 def cadastrar_produto(request):
     if request.POST:
-        form=NewProduct(request.POST, request.FILES)
+        form=FormProduct(request.POST, request.FILES)
         if form.is_valid():
             form.save() 
         return redirect(listagem_de_produtos)
-    return render(request, 'projeto/tela_cadastro.html',{'form':NewProduct})
-
+    return render(request, 'projeto/tela_cadastro.html',{'form':FormProduct})
 
 def editar_produto(request,id):
     produto=get_object_or_404(Product,pk=id)
-    form=UpdateProduct(request.POST or None, instance=produto)
+    form=FormProduct(request.POST or None, instance=produto)
     if request.POST:
         if form.is_valid():
             form.save() 
@@ -39,7 +33,7 @@ def editar_produto(request,id):
 
 def comprar_produto(request,id):
     produto=get_object_or_404(Product,pk=id)
-    form=NewSell(request.POST or None, initial={'id_product':produto.pk})
+    form=FormSell(request.POST or None, initial={'id_product':produto.pk})
 
     if request.POST:
         if form.is_valid():

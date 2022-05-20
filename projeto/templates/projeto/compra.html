@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Comprando</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    </head>
-    <body>
+{% extends 'projeto/extends/base.html' %}
+{% block content %}
+
+<!--PARTE ESPECIFICA-->
         <h1>Compra</h1>
         <form method="POST", action="{% url 'comprar' produto.pk %}", enctype="multipart/form-data">
             {% csrf_token %}
             {{form.as_p}}
             <button type="submit">Finalizar compra</button>
         </form>
-    </body>
-</html>
+{% endblock %}

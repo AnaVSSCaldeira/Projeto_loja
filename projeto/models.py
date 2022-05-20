@@ -1,9 +1,6 @@
 from datetime import datetime
-from email.policy import default
-from django.conf import settings
 from django.db import models
 from django.forms import DateField, EmailField
-from django.utils import timezone
 
 
 class Product(models.Model):
@@ -24,3 +21,6 @@ class Sell(models.Model):
     date =  models.DateField(default=datetime.now())
     id_product = models.ForeignKey(Product,on_delete=models.CASCADE, verbose_name = 'Produto')
     quantity = models.IntegerField()
+
+    def __str__(self):
+        return self.name

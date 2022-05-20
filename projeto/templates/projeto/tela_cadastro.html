@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Cadastro_de_produto</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    </head>
+{% extends 'projeto/extends/base.html' %}
+{% block content %}
     <body>
         <h1>Cadastro</h1>
         <form method="POST", action="{% url 'cadastrar' %}", enctype="multipart/form-data">
@@ -13,5 +7,4 @@
             {{form.as_p}}
             <button>Submit</button>
         </form>
-    </body>
-</html>
+{% endblock %}
