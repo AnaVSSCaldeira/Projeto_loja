@@ -9,13 +9,13 @@
     <body>
         <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="{% url 'index' %}">
+    <a class="navbar-brand" href="{% url 'projeto:index' %}">
       Loja Django
     </a>
     
-    <a href="{% url 'lista_de_produtos' %}">Lista de Produtos</a>
+    <a href="{% url 'projeto:lista_de_produtos' %}">Lista de Produtos</a>
     
-    <a href="{% url 'disponiveis' %}">Lista de Produtos disponíveis</a>
+    <a href="{% url 'projeto:disponiveis' %}">Lista de Produtos disponíveis</a>
 </nav>
 {% block content %}
 {% endblock %}

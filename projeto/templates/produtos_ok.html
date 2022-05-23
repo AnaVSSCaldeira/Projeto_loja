@@ -1,12 +1,12 @@
-{% extends 'projeto/extends/base.html' %}
+{% extends 'extends/base.html' %}
 
 {% block content %}
         <h1>Lista de produtos disponíveis</h1>
-        {% for produto in produtos %}
+        {% for produto in object_list %}
             {{produto.name}}
             {{produto.image}}
             {{produto.price}}
-            <a href="{% url 'comprar' produto.pk %}">Comprar</a>
+            <a href="{% url 'projeto:comprar' produto.id %}">Comprar</a>
             <br>
         {% endfor %}
 {% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'extends/base.html' %}
+
+{% block content %}
+<!--PARTE ESPECIFICA-->
+        <h1>Lista de produtos cadastrados</h1>
+        {% for produto in object_list %}
+            {{produto.name}}
+            <a href="{% url 'projeto:editar' produto.id %}">Editar Produto</a>
+            <br>
+        {% endfor %}
+        <a href="{% url 'projeto:cadastrar' %}">Cadastrar Produto</a>
+{% endblock %}

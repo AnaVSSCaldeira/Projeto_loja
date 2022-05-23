@@ -3,7 +3,7 @@ from django.forms import HiddenInput, ModelForm
 from .models import Product
 from .models import Sell
 
-class FormProduct(ModelForm):#FormProduct
+class FormProduct(forms.ModelForm):#FormProduct
     name = forms.CharField(max_length=20)
     image = forms.ImageField(required=False)
     price = forms.DecimalField(decimal_places=2, max_digits=10, initial=0)

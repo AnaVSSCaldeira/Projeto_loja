@@ -1,9 +1,9 @@
-{% extends 'projeto/extends/base.html' %}
+{% extends 'extends/base.html' %}
 {% block content %}
 
 <!--PARTE ESPECIFICA-->
         <h1>Compra</h1>
-        <form method="POST", action="{% url 'comprar' produto.pk %}", enctype="multipart/form-data">
+        <form method="POST", action="{% url 'projeto:comprar' id_product %}", enctype="multipart/form-data">
             {% csrf_token %}
             {{form.as_p}}
             <button type="submit">Finalizar compra</button>

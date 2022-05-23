@@ -1,9 +1,0 @@
-{% extends 'projeto/extends/base.html' %}
-{% block content %}
-        <h1>Edição</h1>
-        <form method="POST", action="{% url 'editar' produto.pk %}">
-            {% csrf_token %}
-            {{form.as_p}}
-            <button>Update</button>
-        </form>
-{% endblock %}
